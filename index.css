@@ -649,3 +649,75 @@ body:not(.user-is-tabbing) a:focus {
     } 
 }
 
+/* ===== Project gallery (600x900 thumbnails, 3 per row) ===== */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 600px); /* 3 columns, each 600px */
+  gap: 2.4rem;
+  justify-content: center;
+  align-items: start;
+  margin: 2.4rem 0;
+}
+
+.project-card {
+  width: 600px;
+  text-align: center;
+}
+
+.project-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-image {
+  width: 600px;
+  height: 900px;
+  object-fit: cover; /* override global img rule for these covers */
+  display: block;
+  border-radius: 4px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+
+.project-link:hover .project-image,
+.project-link:focus .project-image {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+}
+
+.project-title {
+  margin-top: 1.2rem;
+  font-size: 1.6rem;
+  color: var(--white);
+}
+
+/* Responsive: scale down gracefully and switch columns */
+@media (max-width: 1920px) {
+  .project-grid {
+    grid-template-columns: repeat(3, min(600px, 1fr));
+  }
+  .project-card, .project-image {
+    width: 100%;
+  }
+  .project-image {
+    aspect-ratio: 2/3;
+    height: auto;
+  }
+}
+
+@media (max-width: 1200px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+}
+

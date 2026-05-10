@@ -22,13 +22,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" type="image/png" href="./images/jImage.jpg" />
 
-  <!-- Put your site title here comment-->
   <title>
     Jeremy Reynolds | Game Developer & Designer
   </title>
 
   <meta name="description" content="Add small description of yourslef.">
-  <!-- Add some coding keywords below, Ex: (React, CSS etc) --> 
   <meta name="keywords" content="Put your name, skills and some coding keywords" />
   <link rel="stylesheet" href="index.css" />
 </head>
@@ -57,10 +55,8 @@
     <div class="header__text-box row">
       <div class="header__text">
         <h1 class="heading-primary">
-          <!-- Replace the following name with your name -->
           <span>Jeremy Reynolds</span>
         </h1>
-        <!-- Put a small paragraph about yourself-->
         <p>VR and Game Programmer.</p>
       </div>
     </div>
@@ -73,152 +69,34 @@
     <section class="work" id="work">
       <div class="row">
         <h2>Projects</h2>
-        <div class="work__boxes">
 
-          <!-- Each div with the work__box class is a project. -->
+        <!-- Project grid: 3 pictures per row (600x900 each) -->
+        <div class="project-grid" aria-label="Project gallery">
 
-          <!-- BattleLine -->
-          <div class="work__box">
-            <div class="work__text">
-              <h3>BattleLine</h3>
-              <p>
-                BattleLine was a result of Lantern Light Studios' first ever PADD event (month long game jam). 
-                I acted as the lead designer and programmer of the project.
-                I took inspiration from games like Chess and Clash Royale, but wanted to make a simultaneous turn based game.
-                The game is fun because of the medieval aesthetic and unique choices that the player can make.
-                From the start of the game, the player is able to choose their lineup of characters, as well as starting positions.
-                This project helped me with team leadership, communication, my programming skills, and my overall understanding of game design.
-                I also was able to market the game to potential players, which allowed me to network with players and receive constructive feedback on the game's design and mechanics.
-              </p>
-              <ul class="work__list">
-                <li>Lead Designer</li>
-                <li>Programming multiplayer systems</li>
-                <li>Marketing the game to players</li>
-                <li>Leading and organizing tasks for my team</li>
-              </ul>
+          <article class="project-card">
+            <a href="projects/battleline.html" class="project-link" title="Open BattleLine project page">
+              <img src="./images/library_capsule.png" alt="BattleLine cover" class="project-image" width="600" height="900" />
+              <h3 class="project-title">BattleLine</h3>
+            </a>
+          </article>
 
-              <div class="work__links">
-                <a href="https://store.steampowered.com/app/4089340/BattleLine/" title="Link to Steam Page">
-                  <img src="./images/steam.svg" class="footer__social-image" alt="Steam">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <img src="./images/library_header.png" class="work__image" alt="Project 1" />
-            </div>
-          </div>
+          <article class="project-card">
+            <a href="projects/simone.html" class="project-link" title="Open Simoné project page">
+              <img src="./images/Simone.png" alt="Simoné cover" class="project-image" width="600" height="900" />
+              <h3 class="project-title">Simoné</h3>
+            </a>
+          </article>
 
-          <!-- Simoné -->
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Simoné</h3>
-              <p>
-                Simoné is a memory game where players attempt to remember a sequence of colors, while strategically choosing upgrades to gain points and climb the leaderboard. 
-                The aesthetic of Simoné is heavily based on the French Quarter in New Orleans. 
-                As the player begins the game, they will be met with the smooth, yet degrading voice of our radio host, Simoné. 
-                Players will have to be focused and determined to get past her and remember the sequence.
-              </p>
-              <ul class="work__list">
-                <li>Programming in Unity C#</li>
-                <li>Game Design</li>
-                <li>Producer</li>
-              </ul>
+          <article class="project-card">
+            <a href="projects/me-myself-and-i.html" class="project-link" title="Open Me, Myself, and I project page">
+              <img src="./images/Eugene.png" alt="Me, Myself, and I cover" class="project-image" width="600" height="900" />
+              <h3 class="project-title">Me, Myself, and I</h3>
+            </a>
+          </article>
 
-              <div class="work__links">
-                <a href="https://dudzdude668.itch.io/simone" title="Link to Itch Page">
-                  <img src="./images/itch.svg" class="footer__social-image" alt="Itch">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <img src="./images/Simone.png" class="work__image" alt="Project 1" />
-            </div>
-          </div>
-
-          <!-- Me, Myself, and I -->
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Me, Myself, and I</h3>
-              <p>
-                Me, Myself, and I is a 2D platformer where players must die to pass the level.
-                The main character, Eugene, finds himself stuck in a large scientific lab, where he has clearly been experimented on.
-                His goal is to make it out of this lab by using clones of himself to block, circumvent, or outright sacrifice to clear a path through the weapons in the lab.
-              </p>
-              <ul class="work__list">
-                <li>Programming character controller, death interactions</li>
-                <li>Playtesting character controls to enhance gameplay</li>
-              </ul>
-
-              <!-- <div class="work__links">
-                <a href="https://j-reyn.itch.io/golden-striker" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a> 
-              </div> -->
-            </div>
-            <div class="work__image-box">
-              <img src="./images/Eugene.png" class="work__image" alt="Project 1" />
-            </div>
-          </div>
-
-          <!-- PORTS Sim --> <!--
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Golden Striker</h3>
-              <p>
-                Created in just 3 days, Golden Striker was a result of a game jam. I wanted to challenge myself to work on this project alone, so I ventured into new territory.
-                I created the art, and programmed the entire game, while finding SFX from free sound websites. This project was a great challenge for me because I had never worked in art before. 
-                It gave me a much better understanding of how to create 2d art, and a good opportunity to hone my programming skills. Now, I am continuing to add features and polish the game. 
-              </p>
-              <ul class="work__list">
-                <li>My own game design</li>
-                <li>Programmed the entire project</li>
-                <li>First time making 2d art. Utilized Aseprite</li>
-              </ul>
-
-              <div class="work__links">
-                <a href="https://j-reyn.itch.io/golden-striker" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-                <a href="https://github.com/Jreyn17/Golden-Striker">
-                  <img src="./images/github.svg" class="work__code" title="View Source Code" alt="GitHub">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <img src="./images/GoldenStriker.png" class="work__image" alt="Project 1" />
-            </div>
-          </div>
-
-          <!-- Redhouse VR --> <!--
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Golden Striker</h3>
-              <p>
-                Created in just 3 days, Golden Striker was a result of a game jam. I wanted to challenge myself to work on this project alone, so I ventured into new territory.
-                I created the art, and programmed the entire game, while finding SFX from free sound websites. This project was a great challenge for me because I had never worked in art before. 
-                It gave me a much better understanding of how to create 2d art, and a good opportunity to hone my programming skills. Now, I am continuing to add features and polish the game. 
-              </p>
-              <ul class="work__list">
-                <li>My own game design</li>
-                <li>Programmed the entire project</li>
-                <li>First time making 2d art. Utilized Aseprite</li>
-              </ul>
-
-              <div class="work__links">
-                <a href="https://j-reyn.itch.io/golden-striker" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-                <a href="https://github.com/Jreyn17/Golden-Striker">
-                  <img src="./images/github.svg" class="work__code" title="View Source Code" alt="GitHub">
-                </a>
-              </div>
-            </div>
-            <div class="work__image-box">
-              <img src="./images/GoldenStriker.png" class="work__image" alt="Project 1" />
-            </div>
-          </div> -->
-
+          <!-- Add more .project-card entries as needed, keeping the same structure -->
         </div>
+
       </div>
     </section>
 
@@ -229,7 +107,6 @@
         <h2>About Me</h2>
         <div class="about__content">
           <div class="about__text">
-            <!-- Replace the below paragraph with info about yourself -->
             <p>
               Since a very young age, video games were a major interest to me. As I grew up, I found that coding was a very fun challenge and was something I could strive for. 
               At first, I went to the University of Toledo, majoring in Computer Science, because I thought that I wouldn't have much of a shot in game development. After a year
@@ -243,7 +120,6 @@
           </div>
 
           <div class="about__photo-container">
-            <!-- Add a nice photo of yourself -->
             <img class="about__photo" src="./images/reynoldsJeremy.jpeg" alt="" />
           </div>
         </div>
@@ -257,7 +133,6 @@
         <h2>Resume</h2>
         <div class="resume__content">
           <div class="resume__photo-container">
-            <!-- Add resume photo -->
             <object class="resume__pdf" data="./images/ReynoldsResume.pdf" type="application/pdf" width="100%" height="600">
             <p>Your browser does not support inline PDFs. <a href="./images/ReynoldsResume.pdf" target="_blank" rel="noopener">Open the resume (PDF)</a>.</p>
             </object>
@@ -276,7 +151,6 @@
         <p>
           
         </p>
-        <!-- Replace the email with yours -->
         <a href="mailto:jreynolds5756@gmail.com" class="btn">jreynolds5756@gmail.com</a>
       </div>
     </div>
@@ -286,7 +160,6 @@
 
   <footer role="contentinfo" class="footer">
     <div class="row">
-      <!-- Update the links to point to your accounts -->
       <ul class="footer__social-links">
         <li class="footer__social-link-item">
           <a href="https://github.com/Jreyn17" title="Link to Github Profile">
@@ -300,7 +173,6 @@
         </li>
       </ul>
 
-      <!-- If you give me some credit by keeping the below paragraph, will be huge for me 😊 Thanks. -->
       <p>
         &copy; 2020 - Template designed & developed by <a href="https://nisar.dev" class="link">Nisar</a>.
       </p>
