@@ -649,20 +649,24 @@ body:not(.user-is-tabbing) a:focus {
     } 
 }
 
-/* ===== Project gallery (600x900 thumbnails, 3 per row) ===== */
+/* ===== Project gallery (450x675 thumbnails, 3 per row) ===== */
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(3, 600px); /* 3 columns, each 600px */
+  grid-template-columns: repeat(3, 450px); /* 3 columns, each 450px */
   gap: 2.4rem;
   justify-content: center;
   align-items: start;
   margin: 2.4rem 0;
 }
 
+/* Make each card a centered column so title aligns under image */
 .project-card {
-  width: 600px;
+  width: 450px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers the image and title horizontally */
 }
 
 .project-link {
@@ -671,15 +675,10 @@ body:not(.user-is-tabbing) a:focus {
   text-decoration: none;
 }
 
-/* Keep the image filling the 600px width but limit visual height.
-   object-fit: cover preserves the image's intrinsic aspect ratio while
-   filling the smaller container (content will be cropped vertically).
-   The clamp gives a responsive upper/lower bound so images don't become
-   almost full-screen tall on very large viewports. */
+/* Keep the image at 450x675 and centered */
 .project-image {
-  width: 400px;
-  /*height: clamp(420px, 48vh, 700px); /* reduce vertical size while responsive */
-  height: 600px;
+  width: 450px;
+  height: 675px;
   object-fit: cover; /* preserves the image ratio while filling container */
   object-position: center;
   display: block;
@@ -694,10 +693,13 @@ body:not(.user-is-tabbing) a:focus {
   box-shadow: 0 12px 28px rgba(0,0,0,0.2);
 }
 
+/* ensure title is centered and doesn't overflow */
 .project-title {
   margin-top: 1.2rem;
   font-size: 1.6rem;
   color: var(--white);
+  text-align: center;
+  width: 100%;
 }
 
 /* Responsive breakpoints
@@ -707,7 +709,7 @@ body:not(.user-is-tabbing) a:focus {
 @media (max-width: 1200px) {
   /* switch grid to use fractional columns and let images be fluid */
   .project-grid {
-    grid-template-columns: repeat(3, min(600px, 1fr));
+    grid-template-columns: repeat(3, min(450px, 1fr));
   }
   .project-card, .project-image {
     width: 100%;
@@ -719,7 +721,7 @@ body:not(.user-is-tabbing) a:focus {
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 900px) {
   .project-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.8rem;
