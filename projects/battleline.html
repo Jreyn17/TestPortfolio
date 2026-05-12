@@ -5,12 +5,76 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>BattleLine — Project</title>
   <link rel="stylesheet" href="../index.css" />
+  <style>
+    /* Gallery styles local to this page */
+    .hero-image {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      display: block;
+      margin: 16px 0;
+      border-radius: 4px;
+      object-fit: cover;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin: 16px 0;
+      align-items: start;
+    }
+
+    .gallery-item {
+      width: 100%;
+      /* Use the same aspect ratio as your source (600x900 => 2/3) */
+      aspect-ratio: 2 / 3;
+      overflow: hidden;
+      border-radius: 4px;
+      background: #f5f5f5;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* Optional: keep the main container similar to the rest of the site */
+    main { max-width: 900px; margin: 32px auto; padding: 0 16px; }
+  </style>
 </head>
 <body>
-  <main style="max-width:900px;margin:32px auto;padding:0 16px;">
+  <main>
     <a href="../index.html#work" class="btn" style="display:inline-block;margin-bottom:16px;text-decoration:none;">← Back to Projects</a>
     <h1>BattleLine</h1>
-    <img src="../images/library_header.png" alt="BattleLine cover" style="width:600px;height:900px;max-width:100%;object-fit:cover;border-radius:4px;display:block;margin:16px 0;" />
+
+    <!-- Full-width hero / cover -->
+    <img src="../images/library_header.png" alt="BattleLine cover" class="hero-image" />
+
+    <!-- Responsive grid gallery for the remaining images -->
+    <div class="gallery" aria-label="BattleLine screenshots">
+      <div class="gallery-item">
+        <img src="../images/image0.png" alt="BattleLine screenshot 0" />
+      </div>
+      <div class="gallery-item">
+        <img src="../images/image1.png" alt="BattleLine screenshot 1" />
+      </div>
+      <div class="gallery-item">
+        <img src="../images/image2.png" alt="BattleLine screenshot 2" />
+      </div>
+      <div class="gallery-item">
+        <img src="../images/image3.png" alt="BattleLine screenshot 3" />
+      </div>
+      <div class="gallery-item">
+        <img src="../images/image4.png" alt="BattleLine screenshot 4" />
+      </div>
+      <div class="gallery-item">
+        <img src="../images/image5.png" alt="BattleLine screenshot 5" />
+      </div>
+    </div>
+
     <p>
       BattleLine was a result of Lantern Light Studios' first ever PADD event (month long game jam). 
       I acted as the lead designer and programmer of the project.
