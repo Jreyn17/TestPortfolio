@@ -724,61 +724,67 @@ body:not(.user-is-tabbing) a:focus {
 /* ===== Project page gallery (for individual project pages) ===== */
 
 .project-page {
-  max-width: 900px;
-  margin: 32px auto;
-  padding: 0 16px;
+  max-width: 1240px;      /* allow two 600px images + small gap */
+  margin: 8px auto;       /* smaller vertical margins */
+  padding: 6px 10px;      /* small horizontal padding */
 }
 
-/* Large hero/cover image at top of project page */
-.project-page .project-hero {
-  width: 100%;
-  max-width: 600px;
+/* Heading spacing local to project pages */
+.project-page h1 {
+  margin: 6px 0 10px;
+}
+
+/* Center the hero image and keep natural 600px width when possible */
+.project-page .hero-image {
+  width: 600px;
+  max-width: 100%;
+  height: auto;
   display: block;
-  margin: 16px 0;
+  margin: 12px auto;      /* centered */
   border-radius: 4px;
   object-fit: cover;
 }
 
-/* Grid of remaining screenshots:
-   - keeps a 2:3 aspect ratio (matching your 600x900 assets)
-   - responsive columns using auto-fit / minmax
-*/
-.project-page .project-gallery {
+/* Gallery: single column by default, two fixed 600px columns on wide viewports */
+.project-page .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 16px;
-  margin: 16px 0 24px;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  gap: 12px;
+  margin: 12px 0 20px;
   align-items: start;
 }
 
-/* Each item maintains the 2:3 aspect ratio */
-.project-page .project-thumb {
-  width: 100%;
-  aspect-ratio: 2 / 3;
-  overflow: hidden;
+@media (min-width: 1220px) {
+  .project-page .gallery {
+    grid-template-columns: repeat(2, 600px);
+    justify-content: center;
+  }
+}
+
+/* Each gallery image requests natural 600px width but scales down when needed */
+.project-page .gallery-item img {
+  width: 600px;
+  max-width: 100%;
+  height: auto;
+  display: block;
   border-radius: 4px;
-  background: #111;
+  object-fit: cover;
   box-shadow: 0 6px 18px rgba(0,0,0,0.12);
   transition: transform .22s ease, box-shadow .22s ease;
 }
 
-.project-page .project-thumb img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-}
-
-/* hover effect */
-.project-page .project-thumb:hover,
-.project-page .project-thumb:focus-within {
+.project-page .gallery-item img:hover {
   transform: translateY(-6px) scale(1.01);
   box-shadow: 0 12px 28px rgba(0,0,0,0.2);
 }
 
-/* On very narrow screens reduce gaps slightly */
-@media (max-width: 420px) {
-  .project-page .project-gallery { gap: 12px; }
-  .project-page { padding: 0 12px; }
+/* Tighter paragraph spacing for project pages */
+.project-page p { margin: 8px 0; }
+
+/* Small-screen tweaks */
+@media (max-width: 520px) {
+  .project-page { padding: 6px; margin: 8px auto; }
+  .project-page .gallery { gap: 8px; }
 }
 
