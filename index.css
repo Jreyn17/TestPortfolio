@@ -677,8 +677,9 @@ body:not(.user-is-tabbing) a:focus {
    The clamp gives a responsive upper/lower bound so images don't become
    almost full-screen tall on very large viewports. */
 .project-image {
-  width: 600px;
-  height: clamp(420px, 48vh, 700px); /* reduce vertical size while responsive */
+  width: 400px;
+  /*height: clamp(420px, 48vh, 700px); /* reduce vertical size while responsive */
+  height: 600px;
   object-fit: cover; /* preserves the image ratio while filling container */
   object-position: center;
   display: block;
