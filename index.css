@@ -671,10 +671,16 @@ body:not(.user-is-tabbing) a:focus {
   text-decoration: none;
 }
 
+/* Keep the image filling the 600px width but limit visual height.
+   object-fit: cover preserves the image's intrinsic aspect ratio while
+   filling the smaller container (content will be cropped vertically).
+   The clamp gives a responsive upper/lower bound so images don't become
+   almost full-screen tall on very large viewports. */
 .project-image {
   width: 600px;
-  height: 900px;
-  object-fit: cover; /* override global img rule for these covers */
+  height: clamp(420px, 48vh, 700px); /* reduce vertical size while responsive */
+  object-fit: cover; /* preserves the image ratio while filling container */
+  object-position: center;
   display: block;
   border-radius: 4px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.12);
@@ -693,8 +699,12 @@ body:not(.user-is-tabbing) a:focus {
   color: var(--white);
 }
 
-/* Responsive: scale down gracefully and switch columns */
-@media (max-width: 1920px) {
+/* Responsive breakpoints
+   - On narrower viewports we switch to fluid columns and preserve a 2:3
+     image display using aspect-ratio so images scale down naturally. */
+
+@media (max-width: 1200px) {
+  /* switch grid to use fractional columns and let images be fluid */
   .project-grid {
     grid-template-columns: repeat(3, min(600px, 1fr));
   }
@@ -704,6 +714,7 @@ body:not(.user-is-tabbing) a:focus {
   .project-image {
     aspect-ratio: 2/3;
     height: auto;
+    object-fit: cover; /* still preserve image ratio as it scales */
   }
 }
 
