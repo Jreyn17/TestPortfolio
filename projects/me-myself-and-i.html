@@ -7,10 +7,13 @@
   <link rel="stylesheet" href="../index.css" />
 </head>
 <body>
-  <main style="max-width:900px;margin:32px auto;padding:0 16px;">
-    <a href="../index.html#work" class="btn" style="display:inline-block;margin-bottom:16px;text-decoration:none;">← Back to Projects</a>
+  <main class="project-page">
+    <a href="../index.html" class="btn" style="display:inline-block;margin-bottom:12px;text-decoration:none;">← Back to Projects</a>
     <h1>Me, Myself, and I</h1>
-    <img src="../images/Eugene.png" alt="Me, Myself, and I cover" style="width:600px;height:900px;max-width:100%;object-fit:cover;border-radius:4px;display:block;margin:16px 0;" />
+
+    <!-- Hero / cover (now centered by CSS) -->
+    <img src="../images/Eugene.png" alt="Me, Myself, and I cover" class="hero-image" />
+
     <p>
       Me, Myself, and I is a 2D platformer where players must die to pass the level.
       The main character, Eugene, finds himself stuck in a large scientific lab, where he has clearly been experimented on.
@@ -20,8 +23,31 @@
       <li>Programming character controller, death interactions</li>
       <li>Playtesting character controls to enhance gameplay</li>
     </ul>
+
+    <!-- Gallery: will display 2 columns when viewport >= 1220px -->
+    <div class="gallery" aria-label="Me, Myself, and I screenshots">
+      <div class="gallery-item">
+        <img src="../images/image0.png" alt="Me, Myself, and I screenshot 0" />
+      </div>
+      <div class="gallery-item">
+        <img src="../images/image1.png" alt="Me, Myself, and I screenshot 1" />
+      </div>
+      <div class="gallery-item">
+        <img src="../images/image2.png" alt="Me, Myself, and I screenshot 2" />
+      </div>
+      <div class="gallery-item">
+        <img src="../images/image3.png" alt="Me, Myself, and I screenshot 3" />
+      </div>
+      <div class="gallery-item">
+        <img src="../images/image4.png" alt="Me, Myself, and I screenshot 4" />
+      </div>
+      <div class="gallery-item">
+        <img src="../images/image5.png" alt="Me, Myself, and I screenshot 5" />
+      </div>
+    </div>
+
     <p>
-      <a href="../index.html#work">Back to main page</a>
+      <a href="../index.html">Back to main page</a>
     </p>
   </main>
 </body>

@@ -7,10 +7,13 @@
   <link rel="stylesheet" href="../index.css" />
 </head>
 <body>
-  <main style="max-width:900px;margin:32px auto;padding:0 16px;">
-    <a href="../index.html#work" class="btn" style="display:inline-block;margin-bottom:16px;text-decoration:none;">← Back to Projects</a>
+  <main class="project-page">
+    <a href="../index.html" class="btn" style="display:inline-block;margin-bottom:12px;text-decoration:none;">← Back to Projects</a>
     <h1>Simoné</h1>
-    <img src="../images/Simone.png" alt="Simoné cover" style="width:600px;height:900px;max-width:100%;object-fit:cover;border-radius:4px;display:block;margin:16px 0;" />
+
+    <!-- Hero / cover (now centered by CSS) -->
+    <img src="../images/Simone.png" alt="Simoné cover" class="hero-image" />
+
     <p>
       Simoné is a memory game where players attempt to remember a sequence of colors, while strategically choosing upgrades to gain points and climb the leaderboard. 
       The aesthetic of Simoné is heavily based on the French Quarter in New Orleans. 
@@ -22,8 +25,31 @@
       <li>Game Design</li>
       <li>Producer</li>
     </ul>
+
+    <!-- Gallery: will display 2 columns when viewport >= 1220px -->
+    <div class="gallery" aria-label="Simoné screenshots">
+      <div class="gallery-item">
+        <img src="../images/image0.png" alt="Simoné screenshot 0" />
+      </div>
+      <div class="gallery-item">
+        <img src="../images/image1.png" alt="Simoné screenshot 1" />
+      </div>
+      <div class="gallery-item">
+        <img src="../images/image2.png" alt="Simoné screenshot 2" />
+      </div>
+      <div class="gallery-item">
+        <img src="../images/image3.png" alt="Simoné screenshot 3" />
+      </div>
+      <div class="gallery-item">
+        <img src="../images/image4.png" alt="Simoné screenshot 4" />
+      </div>
+      <div class="gallery-item">
+        <img src="../images/image5.png" alt="Simoné screenshot 5" />
+      </div>
+    </div>
+
     <p>
-      <a href="../index.html#work">Back to main page</a>
+      <a href="../index.html">Back to main page</a>
     </p>
   </main>
 </body>
