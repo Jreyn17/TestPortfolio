@@ -753,49 +753,45 @@ body:not(.user-is-tabbing) a:focus {
     align-items: center;
     gap: 1.2rem; /* ~12px */
     flex-wrap: nowrap;
+    position: relative;
 }
 
-.project-page h2 > span {
-    display: inline-block; /* ensures text behaves as a flex item */
+.project-page h2::after {
+    content: '';
+    order: 2;            /* place after the inline items */
+    flex-basis: 100%;    /* take full width so it appears on the next line */
+    height: 2px;
+    background: var(--pink);
+    margin: 1.2rem 0 0;  /* adjust vertical spacing as needed */
 }
 
 .project-page .steam-link {
     display: inline-flex;
     align-items: center;
     text-decoration: none;
+    order: 1; /* keep title and icon before the pseudo-element */
 }
 
 .project-page .steam-link img.footer__social-image {
-    width: 2.8rem; /* consistent with site rem sizing */
+    width: 3.6rem; /* larger icon */
     height: auto;
 }
 
-/* Center the hero image and keep natural 600px width when possible */
-.project-page .hero-image {
-  width: 600px;
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 12px auto;      /* centered */
-  border-radius: 4px;
-  object-fit: cover;
-}
+/* Responsive: stack and scale down on small screens */
+@media (max-width: 500px) {
+    .project-page h2 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+    }
 
-/* Gallery: single column by default, two fixed 600px columns on wide viewports */
-.project-page .gallery {
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-content: center;
-  gap: 12px;
-  margin: 12px 0 20px;
-  align-items: start;
-}
+    .project-page .steam-link img.footer__social-image {
+        width: 2.8rem;
+    }
 
-@media (min-width: 1220px) {
-  .project-page .gallery {
-    grid-template-columns: repeat(2, 600px);
-    justify-content: center;
-  }
+    .project-page h2::after {
+        margin-top: 0.6rem;
+    }
 }
 
 /* Each gallery image requests natural 600px width but scales down when needed */
