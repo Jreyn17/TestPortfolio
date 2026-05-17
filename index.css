@@ -783,16 +783,15 @@ body:not(.user-is-tabbing) a:focus {
     .project-page h2 {
         flex-direction: column;
         align-items: flex-start;
-        padding-bottom: 0.8rem;
-    }
-
-    .project-page h2::after {
-        width: 8rem;
-        bottom: 0;
+        gap: 0.6rem;
     }
 
     .project-page .steam-link img.footer__social-image {
-        width: 3.2rem;
+        width: 2.8rem;
+    }
+
+    .project-page h2::after {
+        margin-top: 0.6rem;
     }
 }
 
@@ -820,5 +819,53 @@ body:not(.user-is-tabbing) a:focus {
 @media (max-width: 520px) {
   .project-page { padding: 6px; margin: 8px auto; }
   .project-page .gallery { gap: 8px; }
+}
+
+/* Fix: center hero image and make gallery 2-up on wide screens */
+.project-page .hero-image {
+  display: block;
+  margin: 2rem auto;      /* center and add vertical spacing */
+  width: 100%;
+  max-width: 900px;       /* limit how wide the hero gets */
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Grid gallery: 2 columns on wide viewports, 1 column on small screens */
+.project-page .gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+  align-items: start;
+  justify-items: center;
+}
+
+/* Make each gallery item scale to the column width (overrides fixed 600px) */
+.project-page .gallery-item {
+  width: 100%;
+  max-width: 600px; /* keeps images from growing too large */
+}
+
+.project-page .gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1220px) {
+  .project-page .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .project-page .hero-image {
+    margin: 1rem auto;
+    max-width: 100%;
+  }
 }
 
