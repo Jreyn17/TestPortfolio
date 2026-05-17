@@ -748,6 +748,28 @@ body:not(.user-is-tabbing) a:focus {
   margin: 6px 0 10px;
 }
 
+.project-page h2 {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem; /* ~12px */
+    flex-wrap: nowrap;
+}
+
+.project-page h2 > span {
+    display: inline-block; /* ensures text behaves as a flex item */
+}
+
+.project-page .steam-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.project-page .steam-link img.footer__social-image {
+    width: 2.8rem; /* consistent with site rem sizing */
+    height: auto;
+}
+
 /* Center the hero image and keep natural 600px width when possible */
 .project-page .hero-image {
   width: 600px;
